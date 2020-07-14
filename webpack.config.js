@@ -19,7 +19,7 @@ const jsLoaders = () => {
     }
   ]
   if (isDev) {
-    loaders.push('eslint-loaders')
+    loaders.push('eslint-loader')
   }
   return loaders
 }
@@ -55,7 +55,7 @@ module.exports = {
     new CopyPlugin({
       patterns: [
         {
-          from: path.resolve(__dirname,'src/favicon.ico'),
+          from: path.resolve(__dirname, 'src/favicon.ico'),
           to: path.resolve(__dirname, 'dist')
         }
       ],
@@ -81,7 +81,7 @@ module.exports = {
         ],
       },
       {
-        test: /\.js$/, 
+        test: /\.js$/,
         exclude: /node_modules/,
         use: jsLoaders(),
       }
